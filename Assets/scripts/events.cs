@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class events : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class events : MonoBehaviour
 
     void Update()
     {
+        
         if(frictionslider.value < 0.9f)
         {
             if(bounceslider.value > 0.35f)
@@ -105,6 +107,7 @@ public class events : MonoBehaviour
         {
             movewarning.SetActive(false);
         }
+        
 
     }
 
@@ -139,5 +142,30 @@ public class events : MonoBehaviour
         PlayerObj.GetComponent<movement>().movespeed = 0.2f;
         movespeedmodifier.value = 0.2f;
         updateplayersfrictionandbounciness();
+    }
+
+    public GameObject gameoverpanel;
+    public AudioSource dmgsrc;
+    public GameObject player;
+
+    public void gameover()
+    {
+        gameoverpanel.SetActive(true);
+        dmgsrc.Play();
+        player.SetActive(false);
+    }
+
+    public void restartgame()
+    {
+        Scene currentScene = new Scene();
+        currentScene = SceneManager.GetActiveScene();
+
+        SceneManager.LoadScene(currentScene.name); //load active scene one time so everything get reset
+    }
+
+
+    public void exitgame()
+    {
+        Application.Quit();
     }
 }
