@@ -13,10 +13,7 @@ public class events : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public Slider frictionslider;
     public Slider bounceslider;
@@ -27,6 +24,51 @@ public class events : MonoBehaviour
     public PhysicsMaterial2D physmat;
 
     public float defaultgravity = 9.81f;
+
+    public Slider movespeedmodifier;
+
+    public GameObject bouncewarning;
+    public GameObject frictionwarning;
+
+    void Update()
+    {
+        if(frictionslider.value < 0.5f)
+        {
+            if(bounceslider.value > 0.7f)
+            {
+                bouncewarning.SetActive(true);
+                frictionslider.value = 2;
+                updateplayersfrictionandbounciness();
+            }
+            else
+            {
+                bouncewarning.SetActive(false);
+            }
+        }
+        else
+        {
+            bouncewarning.SetActive(false);
+        }
+
+        if (bounceslider.value > 0.7f)
+        {
+            if (frictionslider.value < 0.5f)
+            {
+                frictionwarning.SetActive(true);
+                frictionslider.value = 2;
+                updateplayersfrictionandbounciness();
+            }
+            else
+            {
+                frictionwarning.SetActive(false);
+            }
+        }
+        else
+        {
+            frictionwarning.SetActive(false);
+            //bouncewarning.SetActive(false);
+        }
+    }
 
     public void updateplayersfrictionandbounciness()
     {
@@ -45,13 +87,19 @@ public class events : MonoBehaviour
         PlayerObj.GetComponent<BoxCollider2D>().sharedMaterial = null;
         PlayerObj.GetComponent<BoxCollider2D>().sharedMaterial = physmat;
 
-        if(revgravitycheck.isOn == true)
-        {
-            //Physics.gravity = new Vector3(0f, defaultgravity, 0f);
-        }
-        else
-        {
-            //Physics.gravity = new Vector3(0f, (defaultgravity * -1f), 0f);
-        }
+        PlayerObj.GetComponent<movement>().movespeed = movespeedmodifier.value;
+    }
+
+    public void resetgrav()
+    {
+        gravslider.value = 0;
+        updateplayersfrictionandbounciness();
+    }
+
+    public void resetmoves()
+    {
+        PlayerObj.GetComponent<movement>().movespeed = 0.2f;
+        movespeedmodifier.value = 0.2f;
+        updateplayersfrictionandbounciness();
     }
 }
