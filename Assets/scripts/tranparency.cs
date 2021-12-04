@@ -19,35 +19,97 @@ public class tranparency : MonoBehaviour
 
     public IEnumerator FadeOn()
     {
+        /*
         SpriteRenderer sr = new SpriteRenderer();
         sr = this.gameObject.GetComponent<SpriteRenderer>();
 
         for (int i = 0; i < 10; i++)
         {
             sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
+        */
+
+        SpriteRenderer sr = new SpriteRenderer();
+        sr = this.gameObject.GetComponent<SpriteRenderer>();
+
+        sr.color = new Color(1f, 1f, 1f, 0.1f);
+
+        sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        //yield return new WaitForSeconds(0.1f);
+        //sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        //sr.color = new Color(1f, 1f, 1f, sr.color.a + 0.1f);
+        //yield return new WaitForSeconds(0.1f);
+        sr.color = new Color(1f, 1f, 1f, 0.9f);
+
+        //bad code practice, not approved
+
+        print("done");
     }
 
     public IEnumerator FadeOff()
     {
+        /*
         SpriteRenderer sr = new SpriteRenderer();
         sr = this.gameObject.GetComponent<SpriteRenderer>();
 
         for (int i = 0; i < 10; i++)
         {
             sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
         }
+        */
+
+        SpriteRenderer sr = new SpriteRenderer();
+        sr = this.gameObject.GetComponent<SpriteRenderer>();
+
+        sr.color = new Color(1f, 1f, 1f, 0.9f);
+
+        sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
+        yield return new WaitForSeconds(0.190f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
+        yield return new WaitForSeconds(0.190f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
+        yield return new WaitForSeconds(0.190f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
+        yield return new WaitForSeconds(0.190f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
+        yield return new WaitForSeconds(0.190f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
+        yield return new WaitForSeconds(0.190f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
+        yield return new WaitForSeconds(0.190f);
+        sr.color = new Color(1f, 1f, 1f, sr.color.a - 0.1f);
+        yield return new WaitForSeconds(0.190f);
+
+        sr.color = new Color(1f, 1f, 1f, 0.1f);
+        print("done");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         FadeOff();
+        print("it works!");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         FadeOn();
+        print("it works too!");
     }
 }
