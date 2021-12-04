@@ -32,11 +32,14 @@ public class events : MonoBehaviour
 
     public GameObject toohightext;
 
+    public GameObject cooltext;
+    public GameObject movewarning;
+
     void Update()
     {
-        if(frictionslider.value < 0.8f)
+        if(frictionslider.value < 0.9f)
         {
-            if(bounceslider.value > 0.5f)
+            if(bounceslider.value > 0.35f)
             {
                 bouncewarning.SetActive(true);
                 //frictionslider.value = 2;
@@ -53,9 +56,9 @@ public class events : MonoBehaviour
             bouncewarning.SetActive(false);
         }
 
-        if (bounceslider.value > 0.5f)
+        if (bounceslider.value > 0.4f)
         {
-            if (frictionslider.value < 0.5f)
+            if (frictionslider.value < 0.6f)
             {
                 frictionwarning.SetActive(true);
                 bounceslider.value = 0f;
@@ -80,6 +83,27 @@ public class events : MonoBehaviour
         else
         {
             toohightext.SetActive(false);
+        }
+
+        if(bounceslider.value > 0.1f && frictionslider.value < 0.001f)
+        {
+            cooltext.SetActive(true);
+
+        }
+        else
+        {
+            cooltext.SetActive(false);
+        }
+
+        if(movespeedmodifier.value > 0.3f)
+        {
+            bounceslider.value = 0f;
+            frictionslider.value = 3f;
+            movewarning.SetActive(true);
+        }
+        else
+        {
+            movewarning.SetActive(false);
         }
 
     }
