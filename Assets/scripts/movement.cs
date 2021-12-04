@@ -10,7 +10,7 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movespeed = 0.2f;
+        //movespeed = 0.2f;
     }
 
     // Update is called once per frame
@@ -40,23 +40,23 @@ public class movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            player.velocity = new Vector2(player.transform.position.x, player.transform.position.y + movespeed);
+            player.velocity = new Vector2(player.velocity.x, movespeed);
         }
 
 
         if (Input.GetKey(KeyCode.S))
         {
-            player.velocity = new Vector2(player.transform.position.x, player.transform.position.y - movespeed);
+            player.velocity = new Vector2(player.velocity.x ,movespeed * -1f);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            player.velocity = new Vector2(player.transform.position.x + movespeed, player.transform.position.y);
+            player.velocity = new Vector2(movespeed, player.velocity.y);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            player.velocity = new Vector2(player.transform.position.x - movespeed, player.transform.position.y);
+            player.velocity = new Vector2(movespeed * -1f, player.velocity.y);
         }
 
 
