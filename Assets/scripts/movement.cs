@@ -38,6 +38,8 @@ public class movement : MonoBehaviour
         }
         */
 
+        /*
+
         if (Input.GetKey(KeyCode.W))
         {
             player.velocity = new Vector2(player.velocity.x, movespeed);
@@ -60,7 +62,26 @@ public class movement : MonoBehaviour
         }
 
 
+        */
 
+        if(Input.GetKey(KeyCode.W))
+        {
+            player.AddForce(transform.up * movespeed, ForceMode2D.Impulse);
+        }
 
+        if(Input.GetKey(KeyCode.S))
+        {
+            player.AddForce(transform.up * (movespeed * -1f), ForceMode2D.Impulse);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            player.AddForce(transform.right * movespeed, ForceMode2D.Impulse);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            player.AddForce(transform.right * (movespeed * -1f), ForceMode2D.Impulse);
+        }
     }
 }
