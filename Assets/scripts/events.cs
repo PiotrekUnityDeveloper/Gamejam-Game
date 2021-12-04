@@ -32,7 +32,7 @@ public class events : MonoBehaviour
 
     void Update()
     {
-        if(frictionslider.value < 0.5f)
+        if(frictionslider.value < 0.8f)
         {
             if(bounceslider.value > 0.7f)
             {
@@ -50,7 +50,7 @@ public class events : MonoBehaviour
             bouncewarning.SetActive(false);
         }
 
-        if (bounceslider.value > 0.7f)
+        if (bounceslider.value > 0.5f)
         {
             if (frictionslider.value < 0.5f)
             {
@@ -66,7 +66,7 @@ public class events : MonoBehaviour
         else
         {
             frictionwarning.SetActive(false);
-            //bouncewarning.SetActive(false);
+            //bouncewarning.SetActive(false); 
         }
     }
 
