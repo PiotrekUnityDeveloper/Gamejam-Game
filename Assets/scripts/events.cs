@@ -34,10 +34,11 @@ public class events : MonoBehaviour
     {
         if(frictionslider.value < 0.8f)
         {
-            if(bounceslider.value > 0.7f)
+            if(bounceslider.value > 0.5f)
             {
                 bouncewarning.SetActive(true);
-                frictionslider.value = 2;
+                //frictionslider.value = 2;
+                bounceslider.value = 0.6f;
                 updateplayersfrictionandbounciness();
             }
             else
@@ -55,7 +56,7 @@ public class events : MonoBehaviour
             if (frictionslider.value < 0.5f)
             {
                 frictionwarning.SetActive(true);
-                frictionslider.value = 2;
+                bounceslider.value = 0f;
                 updateplayersfrictionandbounciness();
             }
             else
