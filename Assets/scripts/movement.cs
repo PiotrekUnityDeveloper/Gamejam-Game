@@ -5,6 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     public float movespeed;
+    public Rigidbody2D player;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Input.GetKey(KeyCode.W))
         {
             this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y + movespeed);
@@ -34,5 +36,31 @@ public class movement : MonoBehaviour
         {
             this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x - movespeed, this.gameObject.transform.position.y);
         }
+        */
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            player.velocity = new Vector2(player.transform.position.x, player.transform.position.y + movespeed);
+        }
+
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            player.velocity = new Vector2(player.transform.position.x, player.transform.position.y - movespeed);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            player.velocity = new Vector2(player.transform.position.x + movespeed, player.transform.position.y);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            player.velocity = new Vector2(player.transform.position.x - movespeed, player.transform.position.y);
+        }
+
+
+
+
     }
 }
