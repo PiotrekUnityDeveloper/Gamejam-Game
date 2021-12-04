@@ -30,7 +30,7 @@ public class movement : MonoBehaviour
             this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x + movespeed, this.gameObject.transform.position.y);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
             this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x - movespeed, this.gameObject.transform.position.y);
         }
