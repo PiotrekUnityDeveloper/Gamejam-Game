@@ -30,6 +30,8 @@ public class events : MonoBehaviour
     public GameObject bouncewarning;
     public GameObject frictionwarning;
 
+    public GameObject toohightext;
+
     void Update()
     {
         if(frictionslider.value < 0.8f)
@@ -69,6 +71,17 @@ public class events : MonoBehaviour
             frictionwarning.SetActive(false);
             //bouncewarning.SetActive(false); 
         }
+
+        if(bounceslider.value > 1.6f)
+        {
+            frictionslider.value = 3f;
+            toohightext.SetActive(true);
+        }
+        else
+        {
+            toohightext.SetActive(false);
+        }
+
     }
 
     public void updateplayersfrictionandbounciness()
