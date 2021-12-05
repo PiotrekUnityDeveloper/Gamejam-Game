@@ -14,7 +14,9 @@ public class events : MonoBehaviour
     }
 
     // Update is called once per frame
+
     
+
 
     public Slider frictionslider;
     public Slider bounceslider;
@@ -35,6 +37,22 @@ public class events : MonoBehaviour
 
     public GameObject cooltext;
     public GameObject movewarning;
+
+    private void Awake()
+    {
+        frictionslider.value = PlayerPrefs.GetFloat("friction", 1);
+        bounceslider.value = PlayerPrefs.GetFloat("bounciness", 1);
+        gravslider.value = PlayerPrefs.GetFloat("gravity", 0);
+        movespeedmodifier.value = PlayerPrefs.GetFloat("movespeed", 0.2f);
+
+        print("loading done!");
+        Debug.Log("friction value:" + frictionslider.value + "    playerprefs: " + PlayerPrefs.GetFloat("friction"));
+        Debug.Log("bounciness value:" + bounceslider.value + "    playerprefs:" + PlayerPrefs.GetFloat("bounciness"));
+        Debug.Log("gravity value:" + gravslider.value + "    playerprefs: " + PlayerPrefs.GetFloat("gravity"));
+        Debug.Log("movespeed value:" + movespeedmodifier.value + "    playerprefs: " + PlayerPrefs.GetFloat("movespeed"));
+
+        updateplayersfrictionandbounciness();
+    }
 
     void Update()
     {
@@ -150,6 +168,12 @@ public class events : MonoBehaviour
 
     public void gameover()
     {
+        //savin player settings
+        PlayerPrefs.SetFloat("gravity", gravslider.value);
+        PlayerPrefs.SetFloat("friction", frictionslider.value);
+        PlayerPrefs.SetFloat("bounciness", bounceslider.value);
+        PlayerPrefs.SetFloat("movespeed", movespeedmodifier.value);
+
         gameoverpanel.SetActive(true);
         dmgsrc.Play();
         player.SetActive(false);
