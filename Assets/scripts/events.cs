@@ -162,7 +162,11 @@ public class events : MonoBehaviour
         {
             if(footstepssound.isPlaying == false)
             {
-                footstepssound.Play();
+
+                if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+                {
+                    footstepssound.Play();
+                }
             }
         }
     }
@@ -227,9 +231,10 @@ public class events : MonoBehaviour
 
     public GameObject gameoverpanel;
     public AudioSource dmgsrc;
+    public AudioSource dmgsrc2;
     public GameObject player;
 
-    public void gameover()
+    public void gameover(int soundtype)
     {
         //savin player settings
         PlayerPrefs.SetFloat("gravity", gravslider.value);
@@ -241,8 +246,18 @@ public class events : MonoBehaviour
         PlayerPrefs.SetInt("deaths", (PlayerPrefs.GetInt("deaths", 0) + 1));
 
         gameoverpanel.SetActive(true);
-        dmgsrc.Play();
-        player.SetActive(false);
+
+        
+        if(soundtype == 1)
+        {
+            dmgsrc.Play();
+            player.SetActive(false);
+        }
+        else if(soundtype == 2)
+        {
+            dmgsrc2.Play();
+            player.SetActive(false);
+        }
     }
 
     public void restartgame()

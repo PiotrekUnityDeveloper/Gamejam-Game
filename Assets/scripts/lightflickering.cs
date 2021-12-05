@@ -21,7 +21,13 @@ public class lightflickering : MonoBehaviour
         SUN = GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
         intsity = SUN.intensity;
 
-        StartCoroutine(lighton());
+        //StartCoroutine(lighton());
+    }
+
+    private void Awake()
+    {
+        StartCoroutine(lightoff());
+
     }
 
     // Update is called once per frame

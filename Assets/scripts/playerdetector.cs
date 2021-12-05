@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerdetector : MonoBehaviour
 {
     public GameObject gameoverscreen;
+    public int soundid;
+    public bool trigger_gameover;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +25,13 @@ public class playerdetector : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            events ev = GameObject.Find("EventSystem").GetComponent<events>();
-            ev.gameover();
+            //triggers gameover() or not depending on inspector settings
+
+            if(trigger_gameover == true)
+            {
+                events ev = GameObject.Find("EventSystem").GetComponent<events>();
+                ev.gameover(soundid);
+            }
         }
 
     }
