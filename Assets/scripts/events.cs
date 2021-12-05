@@ -11,6 +11,8 @@ public class events : MonoBehaviour
     {
         updateplayersfrictionandbounciness();
         //Physics.gravity = new Vector3(1f, -9.81f, 0f);
+
+        //StartCoroutine(footcooldown());
     }
 
     // Update is called once per frame
@@ -22,6 +24,8 @@ public class events : MonoBehaviour
     public Slider bounceslider;
     public Slider gravslider;
     public Toggle revgravitycheck;
+
+    public Rigidbody2D playerrigid;
 
     public GameObject PlayerObj;
     public PhysicsMaterial2D physmat;
@@ -38,6 +42,13 @@ public class events : MonoBehaviour
     public GameObject cooltext;
     public GameObject movewarning;
 
+    public AudioSource footstepssound;
+    public AudioSource footstepssound2;
+
+    public int deathcounter;
+
+    public GameObject hintobj;
+
     private void Awake()
     {
         frictionslider.value = PlayerPrefs.GetFloat("friction", 1);
@@ -52,7 +63,20 @@ public class events : MonoBehaviour
         Debug.Log("movespeed value:" + movespeedmodifier.value + "    playerprefs: " + PlayerPrefs.GetFloat("movespeed"));
 
         updateplayersfrictionandbounciness();
+
+        deathcounter = PlayerPrefs.GetInt("deaths", 0);
+
+        if(deathcounter > 2)
+        {
+            hintobj.SetActive(true);
+        }
+        else
+        {
+            hintobj.SetActive(false);
+        }
     }
+
+    public int footstepqueue = 0;
 
     void Update()
     {
@@ -125,8 +149,47 @@ public class events : MonoBehaviour
         {
             movewarning.SetActive(false);
         }
-        
 
+        //other stuff
+
+        footstepplayer();
+
+    }
+
+    public void footstepplayer()
+    {
+        if (playerrigid.velocity.x > 0.1f || playerrigid.velocity.y > 0.1f)
+        {
+            if(footstepssound.isPlaying == false)
+            {
+                footstepssound.Play();
+            }
+        }
+    }
+
+    public IEnumerator footcooldown()
+    {
+        if (playerrigid.velocity.x > 0 || playerrigid.velocity.y > 0)
+        {
+            if(footstepqueue == 0)
+            {
+                footstepssound.Play();
+                footstepqueue = 1;
+            }
+
+            if (footstepqueue == 1)
+            {
+                footstepssound.Play();
+                footstepqueue = 0;
+            }
+        }
+        else
+        {
+            StartCoroutine(footcooldown());
+        }
+
+        yield return new WaitForSeconds(1f);
+        //StartCoroutine(footcooldown());
     }
 
     public void updateplayersfrictionandbounciness()
@@ -174,6 +237,9 @@ public class events : MonoBehaviour
         PlayerPrefs.SetFloat("bounciness", bounceslider.value);
         PlayerPrefs.SetFloat("movespeed", movespeedmodifier.value);
 
+        //deathcounter += 1;
+        PlayerPrefs.SetInt("deaths", (PlayerPrefs.GetInt("deaths", 0) + 1));
+
         gameoverpanel.SetActive(true);
         dmgsrc.Play();
         player.SetActive(false);
@@ -190,6 +256,7 @@ public class events : MonoBehaviour
 
     public void exitgame()
     {
+        PlayerPrefs.SetInt("deaths", 0);
         Application.Quit();
     }
 }
