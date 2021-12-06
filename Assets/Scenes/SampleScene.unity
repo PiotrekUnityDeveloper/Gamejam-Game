@@ -3388,7 +3388,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 519420032}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 1
@@ -4828,7 +4828,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.357
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.08
+  m_Intensity: 2.83
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -4840,7 +4840,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 58.53
   m_PointLightOuterAngle: 85.85
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 8.344651
+  m_PointLightOuterRadius: 11.708039
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -4860,7 +4860,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715176887}
-  m_LocalRotation: {x: 0, y: 0, z: 0.8792332, w: 0.4763917}
+  m_LocalRotation: {x: 0, y: 0, z: 0.91528857, w: 0.40279886}
   m_LocalPosition: {x: 23.03, y: 10.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8249,9 +8249,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.515
+  m_FalloffIntensity: 0.751
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.44
+  m_Intensity: 5.04
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -11203,6 +11203,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1902066953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902066955}
+  - component: {fileID: 1902066954}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1902066954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902066953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 19dbdaf94065bd443a948250ff15876b, type: 2}
+--- !u!4 &1902066955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902066953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.51, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905442936
 GameObject:
   m_ObjectHideFlags: 0
@@ -12259,6 +12307,7 @@ MonoBehaviour:
   deathcounter: 0
   hintobj: {fileID: 275135429}
   enemyhit01: {fileID: 2098365056}
+  gvol: {fileID: 0}
   footstepqueue: 0
   gameoverpanel: {fileID: 401135014}
   dmgsrc: {fileID: 2044652855}

@@ -22,11 +22,12 @@ public class lightflickering : MonoBehaviour
         intsity = SUN.intensity;
 
         //StartCoroutine(lighton());
+        StartCoroutine(lightoff());
     }
 
     private void Awake()
     {
-        StartCoroutine(lightoff());
+       
 
     }
 
@@ -39,7 +40,7 @@ public class lightflickering : MonoBehaviour
 
     public IEnumerator lighton()
     {
-        yield return new WaitForSeconds(Random.Range(mintime, maxtime));
+        yield return new WaitForSeconds(1000);
 
         //lightholder.SetActive(true);
         SUN.intensity = intsity;
@@ -50,7 +51,7 @@ public class lightflickering : MonoBehaviour
 
     public IEnumerator lightoff()
     {
-        yield return new WaitForSeconds(Random.Range(mintime, maxtime));
+        yield return new WaitForSeconds(1000);
 
         //lightholder.SetActive(false);
         SUN.intensity = 0;

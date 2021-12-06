@@ -50,6 +50,10 @@ public class events : MonoBehaviour
     public GameObject hintobj;
     public GameObject enemyhit01;
 
+    public GameObject gvol;
+
+    
+
     private void Awake()
     {
         //PlayerPrefs.SetInt("enemydeath", 0);
@@ -77,6 +81,8 @@ public class events : MonoBehaviour
         {
             hintobj.SetActive(false);
         }
+
+        
     }
 
     public int footstepqueue = 0;
