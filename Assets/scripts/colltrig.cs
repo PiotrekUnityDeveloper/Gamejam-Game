@@ -22,6 +22,8 @@ public class colltrig : MonoBehaviour
         if(collision.tag == "Player")
         {
             pf_script.canfollow = true;
+            events eventscr = GameObject.Find("EventSystem").GetComponent<events>();
+            eventscr.pausemain();
         }
     }
 
@@ -30,6 +32,8 @@ public class colltrig : MonoBehaviour
         if (collision.tag == "Player")
         {
             pf_script.canfollow = false;
+            events eventscr = GameObject.Find("EventSystem").GetComponent<events>();
+            eventscr.stopchasemusic();
         }
     }
 }

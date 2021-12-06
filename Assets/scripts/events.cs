@@ -334,4 +334,19 @@ public class events : MonoBehaviour
     {
         enemyhit01.SetActive(true);
     }
+
+    public AudioSource maintrack;
+    public AudioSource chasetrack;
+
+    public void pausemain()
+    {
+        maintrack.Pause();
+        chasetrack.Play();
+    }
+
+    public void stopchasemusic()
+    {
+        chasetrack.Stop();
+        maintrack.UnPause();
+    }
 }
