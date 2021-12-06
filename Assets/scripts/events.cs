@@ -57,7 +57,7 @@ public class events : MonoBehaviour
         frictionslider.value = PlayerPrefs.GetFloat("friction", 1);
         bounceslider.value = PlayerPrefs.GetFloat("bounciness", 1);
         gravslider.value = PlayerPrefs.GetFloat("gravity", 0);
-        movespeedmodifier.value = PlayerPrefs.GetFloat("movespeed", 0.2f);
+        movespeedmodifier.value = PlayerPrefs.GetFloat("movespeed", 0.4f);
 
         print("loading done!");
         Debug.Log("friction value:" + frictionslider.value + "    playerprefs: " + PlayerPrefs.GetFloat("friction"));
@@ -279,7 +279,48 @@ public class events : MonoBehaviour
         Application.Quit();
     }
 
+    
 
+    public void activatetrap(int trapid)
+    {
+        //Debug.Log("yes?");
+
+        if(trapid == 1)
+        {
+            movement mv = GameObject.Find("ludzik").GetComponent<movement>();
+            movespeedmodifier.value = 0.050f;
+            movespeedmodifier.enabled = false;
+            updateplayersfrictionandbounciness();
+            //mv.movespeed = 0.050f;
+            print("well done");
+
+            //yield return new WaitForSeconds(3.8f);
+            //mv.movespeed = 0.2f;
+
+            //trapcountdown(1);
+            StartCoroutine(trapcountdown(1));
+            
+        }
+        else if(trapid == 2)
+        {
+            //other trap type (ex. insta-kill (gameover()))
+        }
+
+        //yes
+    }
+
+    public IEnumerator trapcountdown(int tid)
+    {
+        yield return new WaitForSeconds(3.8f);
+
+        if(tid == 1)
+        {
+            movespeedmodifier.value = 0.4f;
+            movespeedmodifier.enabled = true;
+            updateplayersfrictionandbounciness();
+            print("yay it works somehow");
+        }
+    }
 
     
 
