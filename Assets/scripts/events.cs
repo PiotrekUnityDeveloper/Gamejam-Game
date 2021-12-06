@@ -48,9 +48,12 @@ public class events : MonoBehaviour
     public int deathcounter;
 
     public GameObject hintobj;
+    public GameObject enemyhit01;
 
     private void Awake()
     {
+        //PlayerPrefs.SetInt("enemydeath", 0);
+
         frictionslider.value = PlayerPrefs.GetFloat("friction", 1);
         bounceslider.value = PlayerPrefs.GetFloat("bounciness", 1);
         gravslider.value = PlayerPrefs.GetFloat("gravity", 0);
@@ -272,6 +275,16 @@ public class events : MonoBehaviour
     public void exitgame()
     {
         PlayerPrefs.SetInt("deaths", 0);
+        PlayerPrefs.SetInt("enemydeath", 0);
         Application.Quit();
+    }
+
+
+
+    
+
+    public void enemyhint()
+    {
+        enemyhit01.SetActive(true);
     }
 }

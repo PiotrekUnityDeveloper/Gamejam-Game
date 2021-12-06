@@ -8,12 +8,18 @@ public class playerfollow : MonoBehaviour
     public Transform target;
     public float speed;
 
+
+
     //public Animator guardanim;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(PlayerPrefs.GetInt("enemydeath", 0) == 1)
+        {
+            events ev = GameObject.Find("EventSystem").GetComponent<events>();
+            ev.enemyhint();
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +49,8 @@ public class playerfollow : MonoBehaviour
         {
             events ev = GameObject.Find("EventSystem").GetComponent<events>();
             ev.gameover(1);
+            PlayerPrefs.SetInt("enemydeath", 1);
+            ev.enemyhint();
         }
     }
 
