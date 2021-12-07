@@ -8,6 +8,8 @@ public class events : MonoBehaviour
 {
     public GameObject redoverlay;
 
+    public bool isdead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -267,6 +269,8 @@ public class events : MonoBehaviour
 
     public void gameover(int soundtype)
     {
+        isdead = true;
+
         //savin player settings
         PlayerPrefs.SetFloat("gravity", gravslider.value);
         PlayerPrefs.SetFloat("friction", frictionslider.value);

@@ -27,13 +27,22 @@ public class colltrig : MonoBehaviour
         }
     }
 
+    public GameObject playerobj01;
+    public events evcode;
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
             pf_script.canfollow = false;
-            events eventscr = GameObject.Find("EventSystem").GetComponent<events>();
-            eventscr.stopchasemusic();
+            //events eventscr001 = GameObject.Find("EventSystem").GetComponent<events>();
+
+            if (isActiveAndEnabled /*&& GameObject.Find("EventSystem") != null /*&& playerobj01 != null && eventscr001.isdead == false*/)
+            {
+                //events eventscr = GameObject.Find("EventSystem").GetComponent<events>(); //error highlight this line
+                evcode.stopchasemusic();
+            }
+            
         }
     }
 }
