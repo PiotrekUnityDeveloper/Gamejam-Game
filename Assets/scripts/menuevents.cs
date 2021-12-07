@@ -163,4 +163,26 @@ public class menuevents : MonoBehaviour
         }
     }
 
+    public void openlink(int linkid)
+    {
+        
+        if(linkid == 1)
+        {
+            Application.OpenURL("https://www.youtube.com/channel/UCM9q2NDkEB99gAJ8JV0pVNQ/videos");
+        }
+        else if(linkid == 2)
+        {
+            Application.OpenURL("https://soundcloud.com/user-193244278");
+
+        }
+        else if(linkid == 3)
+        {
+            Application.OpenURL("https://valentinocervinimusic.itch.io/");
+        }
+        else if(linkid == 4)
+        {
+            Application.OpenURL("https://piotrek4.itch.io/");
+        }
+    }
+
 }

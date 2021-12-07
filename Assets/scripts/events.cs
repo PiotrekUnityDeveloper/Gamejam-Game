@@ -182,6 +182,11 @@ public class events : MonoBehaviour
 
     }
 
+    public void backtomainmenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void footstepplayer()
     {
         if (playerrigid.velocity.x > 0.1f || playerrigid.velocity.y > 0.1f)
