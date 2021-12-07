@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class events : MonoBehaviour
 {
+    public GameObject redoverlay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,11 @@ public class events : MonoBehaviour
         //Physics.gravity = new Vector3(1f, -9.81f, 0f);
 
         //StartCoroutine(footcooldown());
+
+        if(PlayerPrefs.GetInt("hardmode") == 1)
+        {
+            redoverlay.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -52,10 +59,20 @@ public class events : MonoBehaviour
 
     public GameObject gvol;
 
-    
+    //other AS
+
+    public AudioSource maintheme;
+    public AudioSource chasetheme;
 
     private void Awake()
     {
+        //setting up all AudioSources
+        footstepssound.volume = PlayerPrefs.GetFloat("mainvolume", 1);
+        //footstepssound2.volume = PlayerPrefs.GetFloat("mainvolume", 1);
+        maintheme.volume = PlayerPrefs.GetFloat("mainvolume", 1);
+        chasetheme.volume = PlayerPrefs.GetFloat("mainvolume", 1);
+
+
         //PlayerPrefs.SetInt("enemydeath", 0);
 
         frictionslider.value = PlayerPrefs.GetFloat("friction", 1);
@@ -82,7 +99,7 @@ public class events : MonoBehaviour
             hintobj.SetActive(false);
         }
 
-        
+        //thats it
     }
 
     public int footstepqueue = 0;
@@ -282,6 +299,7 @@ public class events : MonoBehaviour
     {
         PlayerPrefs.SetInt("deaths", 0);
         PlayerPrefs.SetInt("enemydeath", 0);
+        PlayerPrefs.SetInt("hardmode", 0);
         Application.Quit();
     }
 

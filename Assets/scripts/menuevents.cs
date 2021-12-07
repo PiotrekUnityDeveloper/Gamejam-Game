@@ -127,14 +127,40 @@ public class menuevents : MonoBehaviour
         
     }
 
+    public Toggle redovertoggle;
+
     public void updatehardcoremode()
     {
-        PlayerPrefs.SetInt("hardmode", 1);
+        
+
+        if(redovertoggle.isOn == true)
+        {
+            PlayerPrefs.SetInt("hardmode", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("hardmode", 0);
+        }
     }
 
     public void loadfirstlevel()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    
+    public GameObject redobj;
+
+    public void togglehardmodeimpact()
+    {
+        if(redovertoggle.isOn == true)
+        {
+            redobj.SetActive(true);
+        }
+        else
+        {
+            redobj.SetActive(false);
+        }
     }
 
 }
