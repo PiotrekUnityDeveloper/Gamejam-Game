@@ -30,11 +30,12 @@ public class playerdetector : MonoBehaviour
             if(trigger_gameover == true)
             {
                 events ev = GameObject.Find("EventSystem").GetComponent<events>();
+                ev.gameover(soundid);
 
                 if (ev.haveguardsuit == false)
                 {
                     //yes
-                    ev.gameover(soundid);
+                    
 
                 }
             }
