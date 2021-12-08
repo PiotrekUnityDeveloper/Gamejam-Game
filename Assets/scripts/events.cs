@@ -8,6 +8,9 @@ public class events : MonoBehaviour
 {
     public GameObject redoverlay;
 
+    public bool haveguardsuit;
+    //public bool haveplank;
+
     public bool isdead = false;
 
     // Start is called before the first frame update
@@ -92,14 +95,19 @@ public class events : MonoBehaviour
 
         deathcounter = PlayerPrefs.GetInt("deaths", 0);
 
-        if(deathcounter > 2)
+        if(SceneManager.GetActiveScene().name == "SampleScene")
         {
-            hintobj.SetActive(true);
+            if (deathcounter > 2)
+            {
+                hintobj.SetActive(true);
+            }
+            else
+            {
+                hintobj.SetActive(false);
+            }
         }
-        else
-        {
-            hintobj.SetActive(false);
-        }
+
+        
 
         //thats it
     }
@@ -359,7 +367,12 @@ public class events : MonoBehaviour
 
     public void enemyhint()
     {
-        enemyhit01.SetActive(true);
+        
+
+        if(SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            enemyhit01.SetActive(true);
+        }
     }
 
     public AudioSource maintrack;
@@ -375,5 +388,22 @@ public class events : MonoBehaviour
     {
         chasetrack.Stop();
         maintrack.UnPause();
+    }
+
+    public Text infotext;
+    public GameObject infotextgobj;
+
+    public void triggercameratext(string text1, Color txtcolor, float distime)
+    {
+        StartCoroutine(sendcameratext(text1, txtcolor, distime));
+    }
+
+    public IEnumerator sendcameratext(string text, Color textcolor, float displaytime)
+    {
+        infotextgobj.SetActive(true);
+        infotext.text = text;
+        infotext.color = textcolor;
+        yield return new WaitForSecondsRealtime(displaytime);
+        infotextgobj.SetActive(false);
     }
 }

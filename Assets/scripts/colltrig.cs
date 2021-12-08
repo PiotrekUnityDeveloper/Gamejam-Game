@@ -21,9 +21,26 @@ public class colltrig : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            pf_script.canfollow = true;
+            
             events eventscr = GameObject.Find("EventSystem").GetComponent<events>();
-            eventscr.pausemain();
+            if(eventscr.haveguardsuit == false)
+            {
+                pf_script.canfollow = true;
+                eventscr.pausemain();
+            }
+            
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            events eventscr2 = GameObject.Find("EventSystem").GetComponent<events>();
+            if(eventscr2.chasetrack.isPlaying == false)
+            {
+                eventscr2.pausemain();
+            }
         }
     }
 
