@@ -122,10 +122,9 @@ public class events : MonoBehaviour
 
         
 
-        if(playerhealth !< 0 && playerhealth !> 1)
-        {
-            playerhealthdisplayer.value = playerhealth;
-        }
+        
+
+
         
         if(frictionslider.value < 0.9f)
         {
@@ -200,6 +199,22 @@ public class events : MonoBehaviour
 
         footstepplayer();
 
+
+        if (playerhealth < 0 && playerhealth > 1)
+        {
+            //playerhealthdisplayer.value = playerhealth;
+        }
+        else
+        {
+            
+
+            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */)
+            {
+                playerhealthdisplayer.value = playerhealth;
+            }
+        }
+
+        //playerhealthdisplayer.value = playerhealth;
     }
 
     public void backtomainmenu()
