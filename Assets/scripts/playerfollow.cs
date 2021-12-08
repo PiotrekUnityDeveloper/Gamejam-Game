@@ -45,9 +45,10 @@ public class playerfollow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Player")
+        events ev = GameObject.Find("EventSystem").GetComponent<events>();
+        if (collision.collider.tag == "Player" && ev.haveguardsuit == false)
         {
-            events ev = GameObject.Find("EventSystem").GetComponent<events>();
+            
             ev.gameover(1);
             PlayerPrefs.SetInt("enemydeath", 1);
             ev.enemyhint();
