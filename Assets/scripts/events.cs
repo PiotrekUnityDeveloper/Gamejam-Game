@@ -13,6 +13,8 @@ public class events : MonoBehaviour
 
     public bool isdead = false;
 
+    public float playerhealth = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -113,9 +115,17 @@ public class events : MonoBehaviour
     }
 
     public int footstepqueue = 0;
+    public Slider playerhealthdisplayer;
 
     void Update()
     {
+
+        
+
+        if(playerhealth !< 0 && playerhealth !> 1)
+        {
+            playerhealthdisplayer.value = playerhealth;
+        }
         
         if(frictionslider.value < 0.9f)
         {
@@ -405,5 +415,30 @@ public class events : MonoBehaviour
         infotext.color = textcolor;
         yield return new WaitForSecondsRealtime(displaytime);
         infotextgobj.SetActive(false);
+    }
+
+    public AudioSource dmg;
+    public AudioSource dest;
+
+    public void playdmgsound()
+    {
+        dmg.Play();
+    }
+
+    public void damageplayer()
+    {
+        playerhealth -= 0.1f;
+
+        if(playerhealth <= 0)
+        {
+            gameover(1);
+        }
+    }
+
+    public void playdestroysound()
+    {
+        dest.Play();
+        //YES I KNOW MY CODE PRACTICES ARE BAD DONT JUDGE ME
+        //I DIDNT WANT TO WASTE TIME ON SOUND CLASSES AND ALL THAT STUFF
     }
 }
