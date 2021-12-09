@@ -14,6 +14,7 @@ public class events : MonoBehaviour
     public bool isdead = false;
 
     public float playerhealth = 1;
+    public GameObject musicsholder;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,21 @@ public class events : MonoBehaviour
         if(PlayerPrefs.GetInt("hardmode") == 1)
         {
             redoverlay.SetActive(true);
+        }
+
+        //setting up music audiosources
+
+        
+
+        if(SceneManager.GetActiveScene().name != "SampleScene")
+        {
+            stopchasemusic();
+        }
+        
+
+        if(SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            DontDestroyOnLoad(musicsholder);
         }
     }
 
@@ -73,6 +89,8 @@ public class events : MonoBehaviour
 
     private void Awake()
     {
+        
+
         //setting up all AudioSources
         footstepssound.volume = PlayerPrefs.GetFloat("mainvolume", 1);
         //footstepssound2.volume = PlayerPrefs.GetFloat("mainvolume", 1);
@@ -109,7 +127,8 @@ public class events : MonoBehaviour
             }
         }
 
-        
+        maintheme = GameObject.Find("defaultmusic").GetComponent<AudioSource>();
+        chasetheme = GameObject.Find("tension").GetComponent<AudioSource>();
 
         //thats it
     }
