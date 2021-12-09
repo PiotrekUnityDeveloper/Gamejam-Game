@@ -57,10 +57,10 @@ public class menuevents : MonoBehaviour
 
     public void RAGEQUIT()
     {
-        //UnityEditor.EditorUtility.DisplayDialog("RAGE QUIT", "KEEP CALM AND RAGE QUIT", "YES", "YES");
-        //UnityEditor.EditorUtility.DisplayDialog("RAGE QUIT", "KEEP CALM AND RAGE QUIT", "YES", "YES");
-        //UnityEditor.EditorUtility.DisplayDialog("RAGE QUIT", "KEEP CALM AND RAGE QUIT", "YES", "YES");
-        //UnityEditor.EditorUtility.DisplayDialog("RAGE QUIT", "KEEP CALM AND RAGE QUIT", "YES", "YES");
+        UnityEditor.EditorUtility.DisplayDialog("RAGE QUIT", "KEEP CALM AND RAGE QUIT", "YES", "YES");
+        UnityEditor.EditorUtility.DisplayDialog("RAGE QUIT", "KEEP CALM AND RAGE QUIT", "YES", "YES");
+        UnityEditor.EditorUtility.DisplayDialog("RAGE QUIT", "KEEP CALM AND RAGE QUIT", "YES", "YES");
+        UnityEditor.EditorUtility.DisplayDialog("RAGE QUIT", "KEEP CALM AND RAGE QUIT", "YES", "YES");
         Application.Quit();
     }
 
