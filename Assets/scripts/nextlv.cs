@@ -29,6 +29,14 @@ public class nextlv : MonoBehaviour
             {
                 SceneManager.LoadScene("Level2");
             }
+            else if (SceneManager.GetActiveScene().name == "Level2")
+            {
+                SceneManager.LoadScene("Level3");
+            }
+            else if (SceneManager.GetActiveScene().name == "Level3")
+            {
+                SceneManager.LoadScene("Level4");
+            }
         }
     }
 }
