@@ -14,6 +14,8 @@ public class menuevents : MonoBehaviour
     public AudioSource chasemusic01;
 
     public AudioSource menutrack;
+
+    public GameObject helppanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,16 @@ public class menuevents : MonoBehaviour
         volsrc.Play();
 
         PlayerPrefs.SetFloat("mainvolume", vol.value);
+    }
+
+    public void showhelppanel()
+    {
+        helppanel.SetActive(true);
+    }
+
+    public void hidehelppanel()
+    {
+        helppanel.SetActive(false);
     }
 
     public void playmaintrack()

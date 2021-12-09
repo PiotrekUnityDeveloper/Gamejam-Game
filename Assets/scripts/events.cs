@@ -160,7 +160,7 @@ public class events : MonoBehaviour
 
         if(cansneak == false)
         {
-            staminaslider.value += 0.001f;
+            staminaslider.value += 0.005f;
 
             movespeedmodifier.value = 0.1f;
 
