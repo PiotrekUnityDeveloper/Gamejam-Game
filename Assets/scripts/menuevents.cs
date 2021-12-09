@@ -12,6 +12,8 @@ public class menuevents : MonoBehaviour
     //preview sources
     public AudioSource mainmusic01;
     public AudioSource chasemusic01;
+
+    public AudioSource menutrack;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,17 +37,20 @@ public class menuevents : MonoBehaviour
     public void playmaintrack()
     {
         mainmusic01.Play();
+        menutrack.Pause();
     }
 
     public void playchasetrack()
     {
         chasemusic01.Play();
+        menutrack.Pause();
     }
 
     public void stopallpreviewtracks()
     {
         mainmusic01.Stop();
         chasemusic01.Stop();
+        menutrack.UnPause();
     }
 
     public AudioSource clicksound;
