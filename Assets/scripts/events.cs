@@ -8,6 +8,8 @@ public class events : MonoBehaviour
 {
     public GameObject redoverlay;
 
+    public bool issneaking = false;
+
     public bool haveguardsuit;
     //public bool haveplank;
 
@@ -120,9 +122,15 @@ public class events : MonoBehaviour
     void Update()
     {
 
-        
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            issneaking = true;
+        }
 
-        
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            issneaking = false;
+        }
 
 
         
@@ -208,7 +216,7 @@ public class events : MonoBehaviour
         {
             
 
-            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */)
+            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */ || SceneManager.GetActiveScene().name == "Level3")
             {
                 playerhealthdisplayer.value = playerhealth;
             }

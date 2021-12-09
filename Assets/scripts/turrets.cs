@@ -12,6 +12,8 @@ public class turrets : MonoBehaviour
 
     public Transform firepoint;
 
+    public float firerate;
+
 
     //prefabs
     public GameObject turretbullet;
@@ -42,7 +44,7 @@ public class turrets : MonoBehaviour
 
     public IEnumerator shootcooldown()
     {
-        yield return new WaitForSecondsRealtime(0.25f);
+        yield return new WaitForSecondsRealtime(firerate);
         //shoot();
         
         if(canshoot == true)
