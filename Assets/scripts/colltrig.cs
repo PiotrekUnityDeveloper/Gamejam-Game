@@ -5,13 +5,10 @@ using UnityEngine;
 public class colltrig : MonoBehaviour
 {
     public playerfollow pf_script;
-    public GameObject player;
-
-    public GameObject currentguard;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("ludzik");
+        
     }
 
     // Update is called once per frame
@@ -28,22 +25,8 @@ public class colltrig : MonoBehaviour
             events eventscr = GameObject.Find("EventSystem").GetComponent<events>();
             if(eventscr.haveguardsuit == false)
             {
-                
-
-                if(eventscr.issneaking == true && (Vector2.Distance(player.transform.position, currentguard.transform.position) > 4.6f))
-                {
-
-                }
-                else
-                {
-                    pf_script.canfollow = true;
-                    eventscr.pausemain();
-                }
-
-            }
-            else
-            {
-
+                pf_script.canfollow = true;
+                eventscr.pausemain();
             }
             
         }
@@ -56,15 +39,7 @@ public class colltrig : MonoBehaviour
             events eventscr2 = GameObject.Find("EventSystem").GetComponent<events>();
             if(eventscr2.chasetrack.isPlaying == false)
             {
-
-                if (eventscr2.issneaking == true && (Vector2.Distance(player.transform.position, currentguard.transform.position) <= 4.6f))
-                {
-                    eventscr2.pausemain();
-                }
-                else if(eventscr2.issneaking == false)
-                {
-                    eventscr2.pausemain();
-                }
+                eventscr2.pausemain();
             }
         }
     }
@@ -77,18 +52,14 @@ public class colltrig : MonoBehaviour
         if (collision.tag == "Player")
         {
             pf_script.canfollow = false;
+            //events eventscr001 = GameObject.Find("EventSystem").GetComponent<events>();
 
+            if (isActiveAndEnabled /*&& GameObject.Find("EventSystem") != null /*&& playerobj01 != null && eventscr001.isdead == false*/)
+            {
+                //events eventscr = GameObject.Find("EventSystem").GetComponent<events>(); //error highlight this line
+                evcode.stopchasemusic();
+            }
             
-
-            if (evcode.issneaking == true && (Vector2.Distance(player.transform.position, currentguard.transform.position) > 4.6f))
-            {
-                evcode.stopchasemusic();
-            }
-            else if(evcode.issneaking == true)
-            {
-                evcode.stopchasemusic();
-            }
-
         }
     }
 }

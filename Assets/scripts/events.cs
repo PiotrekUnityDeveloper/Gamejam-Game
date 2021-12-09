@@ -124,12 +124,12 @@ public class events : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            issneaking = true;
+            //issneaking = true;
         }
 
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-            issneaking = false;
+           // issneaking = false;
         }
 
 
