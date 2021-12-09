@@ -9,6 +9,7 @@ public class events : MonoBehaviour
     public GameObject redoverlay;
 
     public bool issneaking = false;
+    public bool cansneak = true;
 
     public bool haveguardsuit;
     //public bool haveplank;
@@ -119,17 +120,52 @@ public class events : MonoBehaviour
     public int footstepqueue = 0;
     public Slider playerhealthdisplayer;
 
+    public Slider staminaslider;
+
+    public Text sneakingtext;
+
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKeyDown(KeyCode.LeftShift) && cansneak == true)
         {
-            //issneaking = true;
+            issneaking = true;
         }
 
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-           // issneaking = false;
+            issneaking = false;
+        }
+
+
+        if(issneaking == true)
+        {
+            sneakingtext.color = Color.green;
+
+            if(staminaslider.value != 0)
+            {
+                staminaslider.value -= 0.01f;
+            }
+
+            if (staminaslider.value == 0)
+            {
+                cansneak = false;
+                issneaking = false;
+            }
+        }
+        else
+        {
+            sneakingtext.color = Color.red;
+        }
+
+        if(cansneak == false)
+        {
+            staminaslider.value += 0.001f;
+
+            if(staminaslider.value == 1)
+            {
+                cansneak = true;
+            }
         }
 
 

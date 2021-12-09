@@ -26,8 +26,9 @@ public class playerfollow : MonoBehaviour
     void Update()
     {
         //enemy follows player
+        events ev2 = GameObject.Find("EventSystem").GetComponent<events>();
 
-        if(canfollow == true)
+        if ((canfollow == true && ev2.issneaking == false) || (canfollow == true && ev2.issneaking == true && Vector2.Distance(this.gameObject.transform.position, target.transform.position) <= 5.6f))
         {
             Vector3 moveDir = (target.position - transform.position).normalized;
             transform.position += moveDir * speed * Time.deltaTime;
