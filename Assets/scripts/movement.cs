@@ -85,7 +85,31 @@ public class movement : MonoBehaviour
             {
                 player.AddForce(transform.right * (movespeed * -1f), ForceMode2D.Impulse);
             }
+
+            //arrow keys
+
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                player.AddForce(transform.up * movespeed, ForceMode2D.Impulse);
+            }
+
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                player.AddForce(transform.up * (movespeed * -1f), ForceMode2D.Impulse);
+            }
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                player.AddForce(transform.right * movespeed, ForceMode2D.Impulse);
+            }
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                player.AddForce(transform.right * (movespeed * -1f), ForceMode2D.Impulse);
+            }
         }
+
+
 
         
     }
