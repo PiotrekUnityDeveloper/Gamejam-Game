@@ -35,6 +35,9 @@ public class flashlightscr : MonoBehaviour
                 float msangle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
                 flashlightrigid01.rotation = msangle;
 
+                //Quaternion rotation = Quaternion.LookRotation(mouseposition01.transform.position - (transform.position), transform.TransformDirection(Vector3.up));
+                //transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+
             }
         }
     }

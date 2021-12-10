@@ -325,7 +325,7 @@ public class events : MonoBehaviour
         {
             
 
-            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */ || SceneManager.GetActiveScene().name == "Level3")
+            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */ || SceneManager.GetActiveScene().name == "Level3" || SceneManager.GetActiveScene().name == "Level4")
             {
                 playerhealthdisplayer.value = playerhealth;
             }
