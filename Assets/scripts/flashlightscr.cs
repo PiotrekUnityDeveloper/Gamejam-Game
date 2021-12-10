@@ -29,11 +29,11 @@ public class flashlightscr : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "Level4")
             {
 
-                mouseposition01 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                //mouseposition01 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                Vector2 lookdir = (mouseposition01 - flashlightrigid01.position);
-                float msangle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
-                flashlightrigid01.rotation = msangle;
+               // Vector2 lookdir = (mouseposition01 - flashlightrigid01.position);
+               // float msangle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
+               // flashlightrigid01.rotation = msangle;
 
                 //Quaternion rotation = Quaternion.LookRotation(mouseposition01.transform.position - (transform.position), transform.TransformDirection(Vector3.up));
                 //transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
