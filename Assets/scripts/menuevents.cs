@@ -44,6 +44,7 @@ public class menuevents : MonoBehaviour
     public void hidehelppanel()
     {
         helppanel.SetActive(false);
+        helppanel2.SetActive(false);
     }
 
     public GameObject helppanel2;
