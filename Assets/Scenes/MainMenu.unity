@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: describe it in game page comments then.
+  m_Text: describe it on the game page comments then.
 --- !u!222 &9848733
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -369,8 +369,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: When the stamina bar drops to zero, you will not be able to sneak unitl
-    it refills back. You will be also slower than usual when the stamina is refilling
-    itself
+    it refills back. You will be also slower than usual when the stamina is being
+    refilled
 --- !u!222 &33926243
 CanvasRenderer:
   m_ObjectHideFlags: 0
