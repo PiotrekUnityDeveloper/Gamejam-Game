@@ -16,6 +16,9 @@ public class events : MonoBehaviour
 
     public bool isdead = false;
 
+    public bool haveflashlight = false;
+    public bool havelantern = false;
+
     public float playerhealth = 1;
 
     // Start is called before the first frame update
@@ -30,6 +33,16 @@ public class events : MonoBehaviour
         {
             redoverlay.SetActive(true);
         }
+
+        if(SceneManager.GetActiveScene().name == "Level4")
+        {
+            haveflashlight = true;
+        }
+        else
+        {
+            haveflashlight = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -69,6 +82,11 @@ public class events : MonoBehaviour
 
     public GameObject gvol;
 
+    public GameObject flashlight;
+    public GameObject lantern;
+
+    public Vector2 mouseposition01;
+
     //other AS
 
     public AudioSource maintheme;
@@ -76,6 +94,8 @@ public class events : MonoBehaviour
 
     private void Awake()
     {
+
+
         //setting up all AudioSources
         footstepssound.volume = PlayerPrefs.GetFloat("mainvolume", 1);
         //footstepssound2.volume = PlayerPrefs.GetFloat("mainvolume", 1);
@@ -112,7 +132,10 @@ public class events : MonoBehaviour
             }
         }
 
-        
+        if(SceneManager.GetActiveScene().name == "Level4")
+        {
+            triggercameratext("YOU FOUND A FLASHLIGHT", Color.yellow, 3.8f);
+        }
 
         //thats it
     }
@@ -124,8 +147,27 @@ public class events : MonoBehaviour
 
     public Text sneakingtext;
 
+    public Rigidbody2D flashlightrigid;
+
+    private void FixedUpdate()
+    {
+        if (SceneManager.GetActiveScene().name == "Level4")
+        {
+
+            //mouseposition01 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            //Vector2 lookdir = (mouseposition01 - flashlightrigid.position);
+            //float msangle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
+            //flashlightrigid.rotation = msangle;
+
+        }
+    }
+
     void Update()
     {
+
+
+        
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && cansneak == true)
         {
@@ -136,6 +178,21 @@ public class events : MonoBehaviour
         {
             issneaking = false;
         }
+
+        if(Input.GetKeyDown(KeyCode.F) && haveflashlight == true)
+        {
+            if(flashlight.active == true)
+            {
+                flashlight.active = false;
+            }
+            else
+            {
+                flashlight.active = true;
+            }
+
+        }
+
+        
 
 
         if(issneaking == true)

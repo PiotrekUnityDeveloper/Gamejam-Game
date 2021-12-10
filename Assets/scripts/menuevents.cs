@@ -46,6 +46,22 @@ public class menuevents : MonoBehaviour
         helppanel.SetActive(false);
     }
 
+    public GameObject helppanel2;
+
+    public void helppanelpage(int page)
+    {
+        if(page == 1)
+        {
+            helppanel.SetActive(true);
+            helppanel2.SetActive(false);
+        }
+        else
+        {
+            helppanel2.SetActive(true);
+            helppanel.SetActive(false);
+        }
+    }
+
     public void playmaintrack()
     {
         mainmusic01.Play();
