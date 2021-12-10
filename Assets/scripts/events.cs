@@ -43,6 +43,10 @@ public class events : MonoBehaviour
             haveflashlight = false;
         }
 
+        if(SceneManager.GetActiveScene().name == "Level4")
+        {
+            cangotonextlevel = false;
+        }
     }
 
     // Update is called once per frame
@@ -147,7 +151,11 @@ public class events : MonoBehaviour
 
     public Text sneakingtext;
 
+    public AudioSource keyssound;
+
     public Rigidbody2D flashlightrigid;
+
+    public bool cangotonextlevel = true;
 
     private void FixedUpdate()
     {
@@ -161,6 +169,11 @@ public class events : MonoBehaviour
             //flashlightrigid.rotation = msangle;
 
         }
+    }
+
+    public void keyspickup()
+    {
+        keyssound.Play();
     }
 
     void Update()

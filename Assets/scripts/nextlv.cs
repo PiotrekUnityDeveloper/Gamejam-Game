@@ -21,6 +21,8 @@ public class nextlv : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            events evenent = GameObject.Find("EventSystem").GetComponent<events>();
+
             if(SceneManager.GetActiveScene().name == "SampleScene")
             {
                 SceneManager.LoadScene("Level1");
@@ -36,6 +38,11 @@ public class nextlv : MonoBehaviour
             else if (SceneManager.GetActiveScene().name == "Level3")
             {
                 SceneManager.LoadScene("Level4");
+            }
+            else if (SceneManager.GetActiveScene().name == "Level4" && evenent.cangotonextlevel == true)
+            {
+                SceneManager.LoadScene("Level5");
+                print("level5 loaded!");
             }
         }
     }
