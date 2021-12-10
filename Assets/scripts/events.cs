@@ -407,8 +407,8 @@ public class events : MonoBehaviour
 
     public void resetmoves()
     {
-        PlayerObj.GetComponent<movement>().movespeed = 0.2f;
-        movespeedmodifier.value = 0.2f;
+        PlayerObj.GetComponent<movement>().movespeed = 0.42f;
+        movespeedmodifier.value = 0.42f;
         updateplayersfrictionandbounciness();
     }
 
