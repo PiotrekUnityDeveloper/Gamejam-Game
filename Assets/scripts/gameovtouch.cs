@@ -40,6 +40,7 @@ public class gameovtouch : MonoBehaviour
         if(canhurt == true)
         {
             ew2.damageplayer();
+            ew2.playdmgsound();
         }
 
         StartCoroutine(damageplr());
