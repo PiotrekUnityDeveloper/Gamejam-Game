@@ -5293,7 +5293,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 683361543}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.712}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5351,7 +5351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: left
-  flashlightrigidbd: {fileID: 1160252265}
+  requestedrotationobject: {fileID: 1160252262}
+  flashlightrigidbd: {fileID: 0}
 --- !u!225 &524413921
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6875,11 +6876,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1988359052}
   - {fileID: 1099328429}
   - {fileID: 1268389481}
   - {fileID: 1410513504}
   - {fileID: 524413917}
-  - {fileID: 1988359052}
   - {fileID: 401135015}
   - {fileID: 674645986}
   - {fileID: 373516540}
@@ -11669,7 +11670,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 683361543}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.712}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11727,7 +11728,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: up
-  flashlightrigidbd: {fileID: 1160252265}
+  requestedrotationobject: {fileID: 1160252262}
+  flashlightrigidbd: {fileID: 0}
 --- !u!225 &1099328433
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11750,7 +11752,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1160252263}
   - component: {fileID: 1160252264}
-  - component: {fileID: 1160252265}
   m_Layer: 0
   m_Name: ludzikflashlight
   m_TagString: Untagged
@@ -11824,27 +11825,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &1160252265
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160252262}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1165376277
 GameObject:
   m_ObjectHideFlags: 0
@@ -13398,7 +13378,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 683361543}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.712}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13456,7 +13436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: down
-  flashlightrigidbd: {fileID: 1160252265}
+  requestedrotationobject: {fileID: 1160252262}
+  flashlightrigidbd: {fileID: 0}
 --- !u!225 &1268389485
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -13848,7 +13829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseposition01: {x: 0, y: 0}
-  flashlightrigid01: {fileID: 1160252265}
+  flashlightrigid01: {fileID: 0}
   evobj: {fileID: 0}
 --- !u!43 &1299689374
 Mesh:
@@ -15092,7 +15073,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 683361543}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.712}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15150,7 +15131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: right
-  flashlightrigidbd: {fileID: 1160252265}
+  requestedrotationobject: {fileID: 1160252262}
+  flashlightrigidbd: {fileID: 0}
 --- !u!225 &1410513508
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20124,7 +20106,7 @@ RectTransform:
   - {fileID: 272690368}
   - {fileID: 1002834124}
   m_Father: {fileID: 683361543}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -20972,7 +20954,7 @@ MonoBehaviour:
   staminaslider: {fileID: 1045555708}
   sneakingtext: {fileID: 739559955}
   keyssound: {fileID: 294069670}
-  flashlightrigid: {fileID: 1160252265}
+  flashlightrigid: {fileID: 0}
   cangotonextlevel: 1
   gameoverpanel: {fileID: 401135014}
   dmgsrc: {fileID: 2044652855}
