@@ -44,6 +44,11 @@ public class nextlv : MonoBehaviour
                 SceneManager.LoadScene("Level5");
                 print("level5 loaded!");
             }
+
+            if(evenent.cangotonextlevel == false)
+            {
+                evenent.triggercameratext("LOCKED", Color.red, 2f);
+            }
         }
     }
 }

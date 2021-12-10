@@ -21,7 +21,7 @@ public class lockeddoors : MonoBehaviour
         if(collision.tag == "Player")
         {
             events eee = GameObject.Find("EventSystem").GetComponent<events>();
-            eee.sendcameratext("LOCKED", Color.white, 1.5f);
+            eee.triggercameratext("LOCKED", Color.white, 1.5f);
         }
     }
 }
