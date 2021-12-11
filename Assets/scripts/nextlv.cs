@@ -47,7 +47,7 @@ public class nextlv : MonoBehaviour
 
             if(evenent.cangotonextlevel == false)
             {
-                evenent.triggercameratext("LOCKED", Color.red, 2f);
+                evenent.triggercameratext("LOCKED - REQUIRES A KEY", Color.red, 2f);
             }
         }
     }

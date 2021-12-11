@@ -138,7 +138,7 @@ public class events : MonoBehaviour
 
         if(SceneManager.GetActiveScene().name == "Level4")
         {
-            triggercameratext("YOU FOUND A FLASHLIGHT", Color.yellow, 3.8f);
+            triggercameratext("YOU FOUND A FLASHLIGHT [F KEY TO TOGGLE]", Color.yellow, 5f);
         }
 
         //thats it
