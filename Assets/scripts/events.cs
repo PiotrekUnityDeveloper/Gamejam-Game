@@ -98,7 +98,7 @@ public class events : MonoBehaviour
 
     private void Awake()
     {
-
+        
 
         //setting up all AudioSources
         footstepssound.volume = PlayerPrefs.GetFloat("mainvolume", 1);
@@ -109,18 +109,21 @@ public class events : MonoBehaviour
 
         //PlayerPrefs.SetInt("enemydeath", 0);
 
-        frictionslider.value = PlayerPrefs.GetFloat("friction", 1);
-        bounceslider.value = PlayerPrefs.GetFloat("bounciness", 1);
-        gravslider.value = PlayerPrefs.GetFloat("gravity", 0);
-        movespeedmodifier.value = PlayerPrefs.GetFloat("movespeed", 0.4f);
+        if (SceneManager.GetActiveScene().name != "BOSSFIGHT")
+        {
+            frictionslider.value = PlayerPrefs.GetFloat("friction", 1);
+            bounceslider.value = PlayerPrefs.GetFloat("bounciness", 1);
+            gravslider.value = PlayerPrefs.GetFloat("gravity", 0);
+            movespeedmodifier.value = PlayerPrefs.GetFloat("movespeed", 0.4f);
 
-        print("loading done!");
-        Debug.Log("friction value:" + frictionslider.value + "    playerprefs: " + PlayerPrefs.GetFloat("friction"));
-        Debug.Log("bounciness value:" + bounceslider.value + "    playerprefs:" + PlayerPrefs.GetFloat("bounciness"));
-        Debug.Log("gravity value:" + gravslider.value + "    playerprefs: " + PlayerPrefs.GetFloat("gravity"));
-        Debug.Log("movespeed value:" + movespeedmodifier.value + "    playerprefs: " + PlayerPrefs.GetFloat("movespeed"));
+            print("loading done!");
+            Debug.Log("friction value:" + frictionslider.value + "    playerprefs: " + PlayerPrefs.GetFloat("friction"));
+            Debug.Log("bounciness value:" + bounceslider.value + "    playerprefs:" + PlayerPrefs.GetFloat("bounciness"));
+            Debug.Log("gravity value:" + gravslider.value + "    playerprefs: " + PlayerPrefs.GetFloat("gravity"));
+            Debug.Log("movespeed value:" + movespeedmodifier.value + "    playerprefs: " + PlayerPrefs.GetFloat("movespeed"));
 
-        updateplayersfrictionandbounciness();
+            updateplayersfrictionandbounciness();
+        }
 
         deathcounter = PlayerPrefs.GetInt("deaths", 0);
 
