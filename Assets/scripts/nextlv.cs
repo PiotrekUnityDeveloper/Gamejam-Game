@@ -17,6 +17,8 @@ public class nextlv : MonoBehaviour
         
     }
 
+    public GameObject lv5help;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
@@ -58,6 +60,11 @@ public class nextlv : MonoBehaviour
             if (evenent.cangotonextlevel == false)
             {
                 evenent.triggercameratext("LOCKED - REQUIRES A KEY", Color.red, 2f);
+
+                if(SceneManager.GetActiveScene().name == "Level5")
+                {
+                    lv5help.SetActive(true);
+                }
             }
         }
     }

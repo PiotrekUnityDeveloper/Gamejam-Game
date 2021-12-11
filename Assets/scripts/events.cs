@@ -352,6 +352,11 @@ public class events : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void skiplevel5()
+    {
+        SceneManager.LoadScene("Level6");
+    }
+
     public void footstepplayer()
     {
         if (playerrigid.velocity.x > 0.1f || playerrigid.velocity.y > 0.1f)
