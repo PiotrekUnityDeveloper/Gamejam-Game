@@ -14,6 +14,7 @@ public class menuevents : MonoBehaviour
     public AudioSource chasemusic01;
 
     public AudioSource menutrack;
+    public GameObject levelselectorobj;
 
     public GameObject helppanel;
     // Start is called before the first frame update
@@ -117,6 +118,7 @@ public class menuevents : MonoBehaviour
         options.SetActive(false);
         credits.SetActive(false);
         h2p.SetActive(false);
+        levelselectorobj.SetActive(false);
         exit.SetActive(false);
     }
 
@@ -125,6 +127,7 @@ public class menuevents : MonoBehaviour
         play.SetActive(false);
         options.SetActive(true);
         credits.SetActive(false);
+        levelselectorobj.SetActive(false);
         h2p.SetActive(false);
         exit.SetActive(false);
     }
@@ -134,6 +137,7 @@ public class menuevents : MonoBehaviour
         play.SetActive(false);
         options.SetActive(false);
         credits.SetActive(true);
+        levelselectorobj.SetActive(false);
         h2p.SetActive(false);
         exit.SetActive(false);
     }
@@ -143,6 +147,7 @@ public class menuevents : MonoBehaviour
         play.SetActive(false);
         options.SetActive(false);
         credits.SetActive(false);
+        levelselectorobj.SetActive(false);
         h2p.SetActive(true);
         exit.SetActive(false);
     }
@@ -150,6 +155,7 @@ public class menuevents : MonoBehaviour
     public void showexit()
     {
         play.SetActive(false);
+        levelselectorobj.SetActive(false);
         options.SetActive(false);
         credits.SetActive(false);
         h2p.SetActive(false);
@@ -217,6 +223,14 @@ public class menuevents : MonoBehaviour
         {
             Application.OpenURL("https://piotrek4.itch.io/");
         }
+    }
+
+    
+
+    public void showlevelselector()
+    {
+        levelselectorobj.SetActive(true);
+        play.SetActive(false);
     }
 
 }
