@@ -5019,7 +5019,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is a feature (definetely not a bug i couldn't fix)
+  m_Text: Are you playing an outdated version or smth?
 --- !u!222 &781611270
 CanvasRenderer:
   m_ObjectHideFlags: 0

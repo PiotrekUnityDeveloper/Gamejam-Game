@@ -179,7 +179,7 @@ public class menuevents : MonoBehaviour
 
     public void loadfirstlevel()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("story");
     }
 
     
