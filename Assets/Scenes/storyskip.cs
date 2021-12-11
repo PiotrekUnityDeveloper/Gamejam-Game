@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class storyskip : MonoBehaviour
 {
@@ -17,8 +18,11 @@ public class storyskip : MonoBehaviour
         
     }
 
+    public Text loadingtext;
+
     public void skipstory()
     {
+        loadingtext.text = "LOADING...";
         SceneManager.LoadScene("SampleScene");
     }
 }
