@@ -34,7 +34,7 @@ public class events : MonoBehaviour
             redoverlay.SetActive(true);
         }
 
-        if(SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "BOSSFIGHT" || SceneManager.GetActiveScene().name == "Level5" || SceneManager.GetActiveScene().name == "Level6" || SceneManager.GetActiveScene().name == "Level7")
+        if(SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "BOSSFIGHT" || SceneManager.GetActiveScene().name == "Level5")
         {
             haveflashlight = true;
         }
@@ -43,7 +43,7 @@ public class events : MonoBehaviour
             haveflashlight = false;
         }
 
-        if(SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "Level5")
+        if(SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "Level5" || SceneManager.GetActiveScene().name == "Level6")
         {
             cangotonextlevel = false;
         }
