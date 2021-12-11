@@ -44,8 +44,13 @@ public class nextlv : MonoBehaviour
                 SceneManager.LoadScene("Level5");
                 print("level5 loaded!");
             }
+            else if (SceneManager.GetActiveScene().name == "BOSSFIGHT")
+            {
+                SceneManager.LoadScene("theend");
+            }
 
-            if(evenent.cangotonextlevel == false)
+
+            if (evenent.cangotonextlevel == false)
             {
                 evenent.triggercameratext("LOCKED - REQUIRES A KEY", Color.red, 2f);
             }

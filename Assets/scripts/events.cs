@@ -34,7 +34,7 @@ public class events : MonoBehaviour
             redoverlay.SetActive(true);
         }
 
-        if(SceneManager.GetActiveScene().name == "Level4")
+        if(SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "BOSSFIGHT")
         {
             haveflashlight = true;
         }
@@ -141,7 +141,12 @@ public class events : MonoBehaviour
 
         if(SceneManager.GetActiveScene().name == "Level4")
         {
-            triggercameratext("YOU FOUND A FLASHLIGHT [F KEY TO TOGGLE]", Color.yellow, 5f);
+            triggercameratext("YOU FOUND A FLASHLIGHT [F KEY TO TOGGLE]", Color.yellow, 7f);
+        }
+
+        if (SceneManager.GetActiveScene().name == "BOSSFIGHT")
+        {
+            triggercameratext("BETTER RUN FAST!", Color.red, 6f);
         }
 
         //thats it
@@ -328,7 +333,7 @@ public class events : MonoBehaviour
         {
             
 
-            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */ || SceneManager.GetActiveScene().name == "Level3" || SceneManager.GetActiveScene().name == "Level4")
+            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */ || SceneManager.GetActiveScene().name == "Level3" || SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "BOSSFIGHT")
             {
                 playerhealthdisplayer.value = playerhealth;
             }
