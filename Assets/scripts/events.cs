@@ -34,7 +34,7 @@ public class events : MonoBehaviour
             redoverlay.SetActive(true);
         }
 
-        if(SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "BOSSFIGHT")
+        if(SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "BOSSFIGHT" || SceneManager.GetActiveScene().name == "Level5" || SceneManager.GetActiveScene().name == "Level6" || SceneManager.GetActiveScene().name == "Level7")
         {
             haveflashlight = true;
         }
@@ -43,7 +43,7 @@ public class events : MonoBehaviour
             haveflashlight = false;
         }
 
-        if(SceneManager.GetActiveScene().name == "Level4")
+        if(SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "Level5")
         {
             cangotonextlevel = false;
         }
@@ -147,6 +147,11 @@ public class events : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "BOSSFIGHT")
         {
             triggercameratext("BETTER RUN FAST!", Color.red, 6f);
+        }
+
+        if (SceneManager.GetActiveScene().name == "Level6")
+        {
+            triggercameratext("WHERE'S MY FLASHLIGHT?! DID I LOST IT?", Color.white, 5f);
         }
 
         //thats it
@@ -333,7 +338,7 @@ public class events : MonoBehaviour
         {
             
 
-            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */ || SceneManager.GetActiveScene().name == "Level3" || SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "BOSSFIGHT")
+            if(SceneManager.GetActiveScene().name == "Level2" /* SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "SampleScene" */ || SceneManager.GetActiveScene().name == "Level3" || SceneManager.GetActiveScene().name == "Level4" || SceneManager.GetActiveScene().name == "BOSSFIGHT" || SceneManager.GetActiveScene().name == "Level5" || SceneManager.GetActiveScene().name == "Level6")
             {
                 playerhealthdisplayer.value = playerhealth;
             }
