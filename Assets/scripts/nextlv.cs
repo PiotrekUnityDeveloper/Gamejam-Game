@@ -55,6 +55,11 @@ public class nextlv : MonoBehaviour
                 SceneManager.LoadScene("Level6");
                 print("level6 loaded!");
             }
+            else if (SceneManager.GetActiveScene().name == "Level6" && evenent.cangotonextlevel == true)
+            {
+                SceneManager.LoadScene("BOSSFIGHT");
+                print("level6 loaded!");
+            }
 
 
             if (evenent.cangotonextlevel == false)

@@ -9,6 +9,7 @@ public class theendtransition : MonoBehaviour
     void Start()
     {
         StartCoroutine(closetheend());
+        PlayerPrefs.SetInt("levelselector", 1);
     }
 
     // Update is called once per frame

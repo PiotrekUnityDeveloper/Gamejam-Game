@@ -17,10 +17,49 @@ public class menuevents : MonoBehaviour
     public GameObject levelselectorobj;
 
     public GameObject helppanel;
+
+    public GameObject level0button;
+    public GameObject level1button;
+    public GameObject level2button;
+    public GameObject level3button;
+    public GameObject level4button;
+    public GameObject level5button;
+    public GameObject level6button;
+    public GameObject level7button;
+    public GameObject level8button;
+    public GameObject level9button;
+    public GameObject losertext;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(PlayerPrefs.GetInt("levelselector", 0) == 1)
+        {
+            level0button.SetActive(true);
+            level1button.SetActive(true);
+            level2button.SetActive(true);
+            level3button.SetActive(true);
+            level4button.SetActive(true);
+            level5button.SetActive(true);
+            level6button.SetActive(true);
+            level7button.SetActive(true);
+            level8button.SetActive(true);
+            //level9button.SetActive(true);
+            losertext.SetActive(false);
+        }
+        else if(PlayerPrefs.GetInt("levelselector", 0) == 0)
+        {
+            level0button.SetActive(false);
+            level1button.SetActive(false);
+            level2button.SetActive(false);
+            level3button.SetActive(false);
+            level4button.SetActive(false);
+            level5button.SetActive(false);
+            level6button.SetActive(false);
+            level7button.SetActive(false);
+            level8button.SetActive(false);
+            //level9button.SetActive(false);
+            losertext.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -233,4 +272,49 @@ public class menuevents : MonoBehaviour
         play.SetActive(false);
     }
 
+
+    public void loadlevel0()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void loadlevel1()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void loadlevel2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+
+    public void loadlevel3()
+    {
+        SceneManager.LoadScene("Level3");
+    }
+
+    public void loadlevel4()
+    {
+        SceneManager.LoadScene("Level4");
+    }
+
+    public void loadlevel5()
+    {
+        SceneManager.LoadScene("Level5");
+    }
+
+    public void loadlevel6()
+    {
+        SceneManager.LoadScene("Level6");
+    }
+
+    public void loadlevel7()
+    {
+        SceneManager.LoadScene("Level7");
+    }
+
+    public void loadlevel8()
+    {
+        SceneManager.LoadScene("BOSSFIGHT");
+    }
 }
